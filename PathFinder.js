@@ -3,8 +3,8 @@ class PathFinder {
     this.state = initState; 
     this.methods = methods;    
   }
-
   paths = [];
+  intersections = [];
   state = {
     // properties to have methods modify
   };
