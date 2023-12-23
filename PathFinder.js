@@ -11,7 +11,6 @@ class PathFinder {
   methods = {
     // These are the methods to get populated by the codebase
   };
-
   goto(targetState, fromState, avoidState){
     // Placeholder logic for the goto method
     if (targetState === undefined || fromState === undefined) {
