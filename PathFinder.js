@@ -8,6 +8,9 @@ class PathFinder {
   state = {
     // properties to have methods modify
   };
+  nodes = {
+    // connections between dots/nodes for paths
+  };
   methods = {
     // These are the methods to get populated by the codebase
   };
@@ -16,9 +19,12 @@ class PathFinder {
     if (targetState === undefined || fromState === undefined) {
       throw new Error('Please provide targetState and fromState');
     }
-
-    // Check if avoidState is provided and handle accordingly
-    // (logic for avoiding certain states goes here)
+    if (stateMatch(targetState, fromState)){
+      return "same";
+    }
+    if (avoidState("", fromState)){
+      return "avoid";
+    }
 
     // Perform logic to navigate from fromState to targetState
     // (pathfinding logic goes here)
@@ -27,5 +33,8 @@ class PathFinder {
     const path = `Path from ${fromState} to ${targetState}`;
     this.paths.push(path);
     return path;
+  }
+  stateMatch(stateA, stateB){
+    return stateA === stateB;
   }
 }
