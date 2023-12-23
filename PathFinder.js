@@ -16,7 +16,9 @@ class PathFinder {
     if (targetState === undefined || fromState === undefined) {
       throw new Error('Please provide targetState and fromState');
     }
-
+    if (stateMatch(targetState, fromState)){
+      
+    }
     // Check if avoidState is provided and handle accordingly
     // (logic for avoiding certain states goes here)
 
@@ -27,5 +29,8 @@ class PathFinder {
     const path = `Path from ${fromState} to ${targetState}`;
     this.paths.push(path);
     return path;
+  }
+  stateMatch(stateA, stateB){
+    return stateA === stateB;
   }
 }
