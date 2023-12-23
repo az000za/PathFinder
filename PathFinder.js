@@ -8,6 +8,9 @@ class PathFinder {
   state = {
     // properties to have methods modify
   };
+  nodes = {
+    // connections between dots/nodes for paths
+  };
   methods = {
     // These are the methods to get populated by the codebase
   };
@@ -17,10 +20,11 @@ class PathFinder {
       throw new Error('Please provide targetState and fromState');
     }
     if (stateMatch(targetState, fromState)){
-      
+      return "same";
     }
-    // Check if avoidState is provided and handle accordingly
-    // (logic for avoiding certain states goes here)
+    if (avoidState("", fromState)){
+      return "avoid";
+    }
 
     // Perform logic to navigate from fromState to targetState
     // (pathfinding logic goes here)
